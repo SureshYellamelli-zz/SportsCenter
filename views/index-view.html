@@ -1,0 +1,24 @@
+<div class="container-fluid">
+
+    <table>
+        <thead>
+            <tr style="background-color: #5bc0de; padding: 30px">
+                <th>TEAM 1</th>
+                <th>TEAM 2</th>
+                <th>Date</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="match in bindingCode.matches
+                              | filter:matches.searchbyteam |
+                              filter:matches.searchbydate |
+                              filter:matches.searchbyscore">
+                <td style="padding-right :30px"><a href="#detail">{{match.team1.name}} </a></td>
+                <td style="padding-right :30px">{{match.team2.name}} </td>
+                <td style="padding-right :30px"> {{match.date }}</td>
+                <td style="padding-right :30px"> {{match.score1}}&nbsp;&nbsp;&nbsp;{{match.score2}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
